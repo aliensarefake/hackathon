@@ -47,6 +47,7 @@ app.post('/api/login', (req, res) => {
 
     // if user is authenticated, send the points and level
     const [points, level] = userPointsLevel[username] || [0, 0];
+    console.log("username, points, level")
 
     res.json({
         message: 'Login successful',

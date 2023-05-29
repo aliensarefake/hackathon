@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '/Users/guotianfu/Desktop/hackaton/src/front-end/LoginPage/LoginPage.js'; 
 import './Navbar.css';
 import logo from "/Users/guotianfu/Desktop/hackaton/src/icons8-puzzle-64.png"
+import pfp from './Circle-icons-profile.svg.png'
 
 const Navbar = () => {
   const [showDropdownAbout, setShowDropdownAbout] = useState(false);
   const [showDropdownJoin, setShowDropdownJoin] = useState(false);
 
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, user } = useAuth();
 
   return (
     <div className="navbar-container">
@@ -52,7 +53,9 @@ const Navbar = () => {
         )}
         {isLoggedIn && (
           <div className="navbar-right">
-            <a href="#" className="user-profile">Profile</a>
+            <Link to={`/profile/${user.username}`} style={{textDecoration: 'none', color: 'black'}}>
+              <img className="pfp" src= {pfp} alt="profile"></img>
+            </Link>
           </div>
         )}
       </nav>
@@ -61,4 +64,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

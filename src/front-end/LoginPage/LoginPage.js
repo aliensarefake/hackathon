@@ -1,4 +1,5 @@
 import React, { useState, createContext, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './LoginPage.css';
 
 export const AuthContext = createContext();
@@ -8,26 +9,29 @@ export const useAuth = () => {
 }
 
 export const AuthProvider = ({ children }) => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    
-    const value = {
-        isLoggedIn,
-        setIsLoggedIn
-    }
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null); // Store user object in state
 
-    return (
-        <AuthContext.Provider value={value}>
-            {children}
-        </AuthContext.Provider>
-    );
+  const value = {
+      isLoggedIn,
+      setIsLoggedIn,
+      user, // Include user in value
+      setUser // Include setUser in value
+  }
+
+  return (
+      <AuthContext.Provider value={value}>
+          {children}
+      </AuthContext.Provider>
+  );
 }
-
 const LoginPage = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   
   const [errorMessage, setErrorMessage] = useState("");
-  const { setIsLoggedIn } = useAuth();
+  const { setIsLoggedIn, setUser } = useAuth(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,7 +41,6 @@ const LoginPage = () => {
       password: password 
     }
 
-    console.log(data)
     
     const response = await fetch('http://localhost:3001/api/login', {
       method: 'POST',
@@ -48,13 +51,17 @@ const LoginPage = () => {
     });
 
     const responseData = await response.json();
+    console.log(responseData)
 
     if(response.status === 400) {
         // User does not exist or password is incorrect
+        console.log("error")
         setErrorMessage(responseData.message);
     } else {
         // User is authenticated, set login state to true
         setIsLoggedIn(true);
+        setUser(responseData.user); // Set user when a user successfully logs in
+        navigate(`/profile/${responseData.user.username}`);
     }
   }
 

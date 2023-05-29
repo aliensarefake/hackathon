@@ -122,3 +122,8 @@
       transform: translateY(0);
     }
   }
+
+  .pfp{
+    width: 35px;
+    height: 35px;
+  }
