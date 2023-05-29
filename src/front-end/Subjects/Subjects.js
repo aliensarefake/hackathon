@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './subjects.css'; // Import the CSS file
+import './Subjects.css'; // Import the CSS file
 
 const Subjects = () => {
   // Sample data for subjects
@@ -13,21 +12,15 @@ const Subjects = () => {
   ];
 
   return (
-    <div>
-      <h2>Subjects</h2>
-      <div className="subjects-container">
-        {subjects.map(subject => (
-          <Link key={subject.id} to={`/subjects/${subject.id}`}>
-            <div className="subject-box">
-              <p>
-                {subject.name}
-                <span className="underline"></span> {/* Added */}
-              </p>
-            </div>
-          </Link>
-        ))}
+      <div>
+        <h2>Subjects</h2>
+        <div className="subjects-container">
+          HELLLOOOO Here need to have clickable boxes to route to respective subjects
+        </div>
       </div>
-    </div>
+
+      //{/**For every subject, there will be: Mainpage encompassing all topics available, and for each topic, a Notepage and Quizpage*/}
+  
   );
 }
 
