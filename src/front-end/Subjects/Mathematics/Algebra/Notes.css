@@ -1,10 +1,10 @@
-.feature-container{
+.notes-container{
     box-sizing: border-box;
     border-radius: 10px;
     margin: 2.5%;
     box-shadow: 5px 5px; 
-    width: 280px;
-    height: 430px;
+    width: 340px;
+    height: 290px;
     margin: 18px;
     border-color: black;
     border-width: 2px;
@@ -14,13 +14,18 @@
     overflow: hidden;
 }
 
-.feature-container:hover{
+.notes-container:hover{
     transform: translate(-10px, -7px); /* shifts the card up and to the left */
 }
 
-.header-color{
+img.notes-image{
+    height:230px;
+    width: 340px;
+}
+
+.notes-header-color{
     display: block;
-    padding-bottom: 45px;
+    padding-bottom: 20px;
 }
 
 .title {
@@ -42,11 +47,11 @@
     background-color: #48D1CC; /* changes the background color on hover */
 }
 
-.description{
+.notes-description{
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
     font-weight: 400;
     margin-left: 8px;
     padding: 2px 3.2px;
-
+    text-align: center;
 }

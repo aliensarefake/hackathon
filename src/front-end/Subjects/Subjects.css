@@ -1,45 +1,17 @@
-/* subjects.css */
 
-/* Styles for Subjects page */
+
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+
 .subjects-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly; 
+  padding: 0 10px; 
 }
-
-.subject-box {
-  width: 200px;
-  height: 200px;
-  margin: 20px;
-  padding: 20px;
-  background-color: #F9C74F; /* Default color */
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  position: relative; /* Added */
-}
-
-.subject-box:hover {
-  background-color: #F48C06; /* Hover color */
-}
-
-.subject-box p {
-  font-size: 18px;
-  color: #333;
-  position: relative; /* Added */
-}
-
-.subject-box p::after {
-  content: '';
-  position: absolute;
-  bottom: -3px; /* Adjust as needed */
-  left: 0;
-  width: 100%;
-  height: 4px; /* Adjust thickness of the underline */
-  background-color: #333; /* Color of the underline */
-  transform: rotate(-1deg); /* Adjust the angle of the underline */
-}
-
-  

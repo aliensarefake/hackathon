@@ -10,13 +10,13 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState(null); // Store user object in state
+  const [user, setUser] = useState(null); 
 
   const value = {
       isLoggedIn,
       setIsLoggedIn,
-      user, // Include user in value
-      setUser // Include setUser in value
+      user, 
+      setUser
   }
 
   return (
@@ -54,13 +54,11 @@ const LoginPage = () => {
     console.log(responseData)
 
     if(response.status === 400) {
-        // User does not exist or password is incorrect
         console.log("error")
         setErrorMessage(responseData.message);
     } else {
-        // User is authenticated, set login state to true
         setIsLoggedIn(true);
-        setUser(responseData.user); // Set user when a user successfully logs in
+        setUser(responseData.user); 
         navigate(`/profile/${responseData.user.username}`);
     }
   }

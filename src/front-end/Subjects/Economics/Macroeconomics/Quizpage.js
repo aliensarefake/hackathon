@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Quizpage.css'; //import the CSS File
 
-//THIS IS MATH - GEOMETRY - QUIZ PAGE
+//THIS IS FOR ECONS - MACRO - QUIZ PAGE
 
 const Quizpage = () => {
   const [answers, setAnswers] = useState([]);
@@ -21,7 +21,7 @@ const Quizpage = () => {
     } else {
       return (
         <span className="feedback wrong">
-          Wrong! Try again. Hint: <em>Provide a hint here</em>
+          Wrong! Try again.
         </span>
       );
     }
@@ -29,32 +29,25 @@ const Quizpage = () => {
 
   // Define the array of options
   const options_q1 = [
-    { value: 'option1', label: 'when y = 0, x = e' },
-    { value: 'option2', label: 'as u -> -∞, x -> 0' },
-    { value: 'option3', label: 'as u -> -∞, y -> ∞'},
+    { value: 'option1', label: 'Consumption' },
+    { value: 'option2', label: 'Investment' },
+    { value: 'option3', label: 'Government Expenditure' },
+    { value: 'option4', label: 'Net Exports'}
   ];
 
   const options_q2 = [
-    { value: 'option1', label: 'Tangent: y = x/p - a/p^2 + a ln(p)' },
-    { value: 'option2', label: 'Normal: y = x/p - a/p^2 + a ln(p)' },
-    { value: 'option3', label: 'Tangent: y = px + a + a ln(p)' },
+    { value: 'option1', label: 'Cyclical' },
+    { value: 'option2', label: 'Frictional' },
+    { value: 'option3', label: 'Structural' },
   ];
 
   return (
     <div className="quiz-page">
-      <h2 style={{paddingBottom: 30}}>Mathematics - Geometry - Quiz Page</h2>
-      <div className="question-image">
-        {/* Example of displaying a PDF file */}
-        {/* <Document file="/path/to/quiz.pdf">
-          <Page pageNumber={1} />
-        </Document> */}
-        //<img src="/path/to/question-image.jpg" alt="Question 1" />
-
-      </div>
+      <h2 style={{paddingBottom: 30}}>Economics - Macroeconomics - Quiz Page</h2>
 
       <div className="questions">
         <div className="question">
-          <p>Question 1: Which of the following is NOT TRUE from the given graph C? [2]</p>
+          <p>Question 1: Which of the following is the largest contributor to GDP for small and open economy like Singapore? [1]</p>
           <ul>
             {options_q1.map((option, index) => (
               <li key={index}>
@@ -70,14 +63,16 @@ const Quizpage = () => {
               </li>
             ))}
           </ul>
-          {answers.length > 0 && checkAnswer(0, options_q1[0].value)}
+          {answers.length > 0 && checkAnswer(0, options_q1[3].value)}
           {/* Remember to change 'correctOption1' to the actual correct description */}
         </div>
         
 
         {/* Add more questions */}
         <div className="question">
-          <p>Question 2: What are the Equations of Tangent or Normal? [3]</p>
+          <p>Question 2: There is a major skill mismatch happening recently due to the Covid-19 pandemic. 
+             Many people are unemployed because they lack the skills demanded by the industry. 
+             What type of unemployment is this? [1]</p>
           <ul>
             {options_q2.map((option, index) => (
               <li key={index}>
@@ -93,7 +88,7 @@ const Quizpage = () => {
               </li>
             ))}
           </ul>
-          {answers.length > 1 && checkAnswer(1, options_q2[1].value)}
+          {answers.length > 1 && checkAnswer(1, options_q2[2].value)}
         </div>
         
       </div>
@@ -102,4 +97,3 @@ const Quizpage = () => {
 };
 
 export default Quizpage;
-

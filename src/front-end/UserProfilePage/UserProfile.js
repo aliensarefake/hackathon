@@ -1,20 +1,25 @@
 import React from 'react';
-import './UserProfile.css';
+import PointsCard from './PointsCard';
+import EarnMorePointsCard from './EarnMorePointsCard';
+import RedeemPointsCard from './RedeemPointsCard';
+import "./UserProfile.css"
 
 const UserProfile = ({ data, username }) => {
     return (
         <div className="profile-container">
-            <h2>Welcome, {username}!</h2>
-            <div className="profile-details">
-                <p className="profile-points">Points: {data[0]}</p>
-                <p className="profile-level">Level: {data[1]}</p>
+            <h2 className='user'>{username}!</h2>
+            <div className="profile-cards">
+                <div className="card-container">
+                  <PointsCard points={data[0]} level={data[1]} />
+                </div>
+                <div className="card-container">
+                  <EarnMorePointsCard />
+                </div>
             </div>
-            <div className="profile-activity">
-                <h3 className="profile-section-title">Recent Activity</h3>
-                {/* Implement user's recent activity */}
-            </div>
+            <RedeemPointsCard />
         </div>
     );
 };
 
 export default UserProfile;
+

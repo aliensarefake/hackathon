@@ -29,17 +29,19 @@ const Quizpage = () => {
 
   // Define the array of options
   const options_q1 = [
-    { value: (
-        <>
-          a = <span className="fraction">
-            <span className="numerator">5</span>
-            <span className="denominator">(9(x<sup>2</sup> - 1)<sup>9</sup>)</span>
-          </span>
-          , b = -1/4, c = 3/8
-        </>
-      ), label: 'Option 1' 
+    { value: 'option1', 
+      label: (
+      <>
+        a = <span className="fraction">
+          <span className="numerator">5</span>
+          <span className="denominator">(9(x<sup>2</sup> - 1)<sup>9</sup>)</span>
+        </span>
+        , b = -1/4, c = 3/8
+      </>
+    ) 
     },
-    { value: (
+    { value: 'option2', 
+      label: (
         <>
           a = <span className="fraction">
             <span className="numerator">-5</span>
@@ -47,9 +49,10 @@ const Quizpage = () => {
           </span>
           , b = -1/4, c = 3/8
         </>
-      ), label: 'Option 2' 
+      ) 
     },
-    { value: (
+    { value: 'option3',
+      label: (
         <>
           a = <span className="fraction">
             <span className="numerator">5</span>
@@ -57,32 +60,31 @@ const Quizpage = () => {
           </span>
           , b = -1/4, c = 3/8
         </>
-      ),
-      label: 'Option 3'
+      )
     },
   ];
 
   const options_q2 = [
-    { value: 'xcosx - sinx + C', label: 'Option 1' },
-    { value: '-xcosx - sinx + C', label: 'Option 2' },
-    { value: '-xcosx + sinx + C', label: 'Option 3' },
+    { value: 'option1', label: 'xcosx - sinx + C' },
+    { value: 'option2', label: '-xcosx - sinx + C' },
+    { value: 'option3', label: '-xcosx + sinx + C' },
   ];
 
   return (
     <div className="quiz-page">
-      <h2>Mathematics - Calculus - Quiz Page</h2>
+      <h2 style={{paddingBottom: 30}}>Mathematics - Calculus - Quiz Page</h2>
       <div className="question-image">
         {/* Example of displaying a PDF file */}
         {/* <Document file="/path/to/quiz.pdf">
           <Page pageNumber={1} />
         </Document> */}
-        //<img src="/path/to/question-image.jpg" alt="Question" />
+        <img src="/path/to/question-image.jpg" alt="Question 1" />
 
       </div>
 
       <div className="questions">
         <div className="question">
-          <p>Question 1: Evaluate the Integral above.</p>
+          <p>Question 1: Evaluate the Integral above. [2]</p>
           <ul>
             {options_q1.map((option, index) => (
               <li key={index}>
@@ -101,13 +103,23 @@ const Quizpage = () => {
           {answers.length > 0 && checkAnswer(0, options_q1[1].value)}
           {/* Remember to change 'correctOption1' to the actual correct description */}
         </div>
+      </div>
         
 
-        {/* Add more questions */}
+      <div className="question-image">
+      {/* Example of displaying a PDF file */}
+      {/* <Document file="/path/to/quiz.pdf">
+        <Page pageNumber={1} />
+      </Document> */}
+      <img src="/path/to/question-image.jpg" alt="Question 2" />
+
+      </div>
+
+      <div className="questions">
         <div className="question">
-          <p>Question 2: What is the result of Integrating xsinx ?</p>
+          <p>Question 2: What is the result of Integrating xsinx ? [2]</p>
           <ul>
-            {options.map((option, index) => (
+            {options_q2.map((option, index) => (
               <li key={index}>
                 <label>
                   <input

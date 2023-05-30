@@ -1,9 +1,27 @@
+.card-container {
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+  margin: 1rem; /* adjust as needed */
+}
+
+h2.user{
+  margin-top: 10px;
+  font-size: 34px;
+}
+
+.profile-cards {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+}
+
 .profile-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'Inter', sans-serif;
-  background-color: #f8f8f8;
+  background-color: #F5F5F5;
   color: #333;
   width: 80%;
   margin: auto;
@@ -25,12 +43,14 @@
   height: 120px;
   object-fit: cover;
   border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 .profile-username {
   font-size: 26px;
-  font-weight: bold;
-  margin: 10px 0;
+  font-weight: 700;
+  color: #FFD700;
+  margin-bottom: 5px;
 }
 
 .profile-fullname, .profile-email {
@@ -40,8 +60,9 @@
 
 .profile-section-title {
   font-size: 20px;
-  font-weight: bold;
-  margin: 10px 0;
+  font-weight: 600;
+  color: #FFD700;
+  margin: 20px 0;
   text-align: left;
   width: 100%;
 }
@@ -57,7 +78,6 @@
 
 .profile-points, .profile-level, .profile-joined {
   font-size: 16px;
-  opacity: 0.9;
   color: #666;
   margin-bottom: 10px;
 }

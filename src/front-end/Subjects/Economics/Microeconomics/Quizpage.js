@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Quizpage.css'; //import the CSS File
 
-//THIS IS MATH - GEOMETRY - QUIZ PAGE
+//THIS IS FOR ECONS - MICRO - QUIZ PAGE
 
 const Quizpage = () => {
   const [answers, setAnswers] = useState([]);
@@ -21,7 +21,7 @@ const Quizpage = () => {
     } else {
       return (
         <span className="feedback wrong">
-          Wrong! Try again. Hint: <em>Provide a hint here</em>
+          Wrong! Try again.
         </span>
       );
     }
@@ -29,32 +29,33 @@ const Quizpage = () => {
 
   // Define the array of options
   const options_q1 = [
-    { value: 'option1', label: 'when y = 0, x = e' },
-    { value: 'option2', label: 'as u -> -∞, x -> 0' },
-    { value: 'option3', label: 'as u -> -∞, y -> ∞'},
+    { value: 'option1', label: 'Increase and be indeterminant respectively' },
+    { value: 'option2', label: 'Increase and Decrease respectively' },
+    { value: 'option3', label: 'Increase and Increase respectively' },
+    { value: 'option4', label: 'Decrease and indeterminant respectively'}
   ];
 
   const options_q2 = [
-    { value: 'option1', label: 'Tangent: y = x/p - a/p^2 + a ln(p)' },
-    { value: 'option2', label: 'Normal: y = x/p - a/p^2 + a ln(p)' },
-    { value: 'option3', label: 'Tangent: y = px + a + a ln(p)' },
+    { value: 'option1', label: 'High Barriers to Entry' },
+    { value: 'option2', label: 'Constantly earning Supernormal profit' },
+    { value: 'option3', label: 'Imperfect Information for consumers' },
   ];
 
   return (
     <div className="quiz-page">
-      <h2 style={{paddingBottom: 30}}>Mathematics - Geometry - Quiz Page</h2>
+      <h2 style={{paddingBottom: 30}}>Economics - Microeconomics - Quiz Page</h2>
       <div className="question-image">
         {/* Example of displaying a PDF file */}
         {/* <Document file="/path/to/quiz.pdf">
           <Page pageNumber={1} />
         </Document> */}
-        //<img src="/path/to/question-image.jpg" alt="Question 1" />
 
       </div>
 
       <div className="questions">
         <div className="question">
-          <p>Question 1: Which of the following is NOT TRUE from the given graph C? [2]</p>
+          <p>Question 1: If there is a increse in demand and fall in supply of a good, 
+            then its Price and Quantity demanded will... [1]</p>
           <ul>
             {options_q1.map((option, index) => (
               <li key={index}>
@@ -77,7 +78,7 @@ const Quizpage = () => {
 
         {/* Add more questions */}
         <div className="question">
-          <p>Question 2: What are the Equations of Tangent or Normal? [3]</p>
+          <p>Question 2: Which of the following is not a characteristic of a market with a Monopoly? [1]</p>
           <ul>
             {options_q2.map((option, index) => (
               <li key={index}>
@@ -102,4 +103,3 @@ const Quizpage = () => {
 };
 
 export default Quizpage;
-
