@@ -14,9 +14,9 @@
   }
   
   .navbar-logo {
-    width: 30px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 25px; /* Add spacing as needed */
+    width: 30px;
+    height: auto; 
+    margin-right: 25px; 
   }
 
   .navbar-left, .navbar-right {

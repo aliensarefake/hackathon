@@ -13,7 +13,7 @@
 }
 
 .topic-container:hover{
-    transform: translate(-10px, -7px); /* shifts the card up and to the left */
+    transform: translate(-10px, -7px); 
 }
 
 .topic-header-color{

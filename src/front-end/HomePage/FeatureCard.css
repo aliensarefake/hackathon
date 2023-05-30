@@ -15,7 +15,7 @@
 }
 
 .feature-container:hover{
-    transform: translate(-10px, -7px); /* shifts the card up and to the left */
+    transform: translate(-10px, -7px); 
 }
 
 .header-color{
@@ -39,7 +39,7 @@
 }
 
 .title span:hover{
-    background-color: #48D1CC; /* changes the background color on hover */
+    background-color: #48D1CC; 
 }
 
 .description{
